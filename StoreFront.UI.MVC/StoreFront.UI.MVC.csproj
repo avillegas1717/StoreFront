@@ -9,9 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\_OriginalLayout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_OriginalLayout.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
@@ -29,6 +34,19 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\vendor\choices.js\src\" />
+    <Folder Include="wwwroot\vendor\choices.js\types\" />
+    <Folder Include="wwwroot\vendor\swiper\angular\angular\src\" />
+    <Folder Include="wwwroot\vendor\swiper\angular\esm2015\angular\src\" />
+    <Folder Include="wwwroot\vendor\swiper\types\modules\" />
+    <Folder Include="wwwroot\_Archive\StoreFrontTemplate\vendor\choices.js\src\" />
+    <Folder Include="wwwroot\_Archive\StoreFrontTemplate\vendor\choices.js\types\" />
+    <Folder Include="wwwroot\_Archive\StoreFrontTemplate\vendor\swiper\angular\angular\src\" />
+    <Folder Include="wwwroot\_Archive\StoreFrontTemplate\vendor\swiper\angular\esm2015\angular\src\" />
+    <Folder Include="wwwroot\_Archive\StoreFrontTemplate\vendor\swiper\types\modules\" />
   </ItemGroup>
 
 </Project>
