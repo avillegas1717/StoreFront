@@ -49,4 +49,8 @@
     <Folder Include="wwwroot\_Archive\StoreFrontTemplate\vendor\swiper\types\modules\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StoreFront.DATA.EF\StoreFront.DATA.EF.csproj" />
+  </ItemGroup>
+
 </Project>
