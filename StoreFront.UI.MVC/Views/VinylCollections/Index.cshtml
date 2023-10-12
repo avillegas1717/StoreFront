@@ -1,0 +1,71 @@
+﻿@model IEnumerable<StoreFront.DATA.EF.Models.VinylCollection>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CollectionPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollectionDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitsInStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDiscontinued)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollectionImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Condition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectionPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectionDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsInStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDiscontinued)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectionImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Condition.ConditionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.GenreId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CollectionId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CollectionId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CollectionId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,61 @@
+﻿@model StoreFront.DATA.EF.Models.VinylCollection
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>VinylCollection</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GenreId" class="control-label"></label>
+                <select asp-for="GenreId" class ="form-control" asp-items="ViewBag.GenreId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CollectionPrice" class="control-label"></label>
+                <input asp-for="CollectionPrice" class="form-control" />
+                <span asp-validation-for="CollectionPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CollectionDescription" class="control-label"></label>
+                <input asp-for="CollectionDescription" class="form-control" />
+                <span asp-validation-for="CollectionDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitsInStock" class="control-label"></label>
+                <input asp-for="UnitsInStock" class="form-control" />
+                <span asp-validation-for="UnitsInStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsDiscontinued" class="control-label"></label>
+                <input asp-for="IsDiscontinued" class="form-control" />
+                <span asp-validation-for="IsDiscontinued" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CollectionImage" class="control-label"></label>
+                <input asp-for="CollectionImage" class="form-control" />
+                <span asp-validation-for="CollectionImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConditionId" class="control-label"></label>
+                <select asp-for="ConditionId" class ="form-control" asp-items="ViewBag.ConditionId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
