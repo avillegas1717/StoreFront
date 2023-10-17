@@ -4,12 +4,30 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Index</h1> 
 
-<p>
+@* <p>
     <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+</p> *@
+
+<div class="row">
+    <div align="center" class="offset-3 col-md-6 mb-3">
+        <button id="ToggleConditionCreate" class="btn-primary btn">Add New Condition</button>
+    </div>
+</div>
+
+<div id="ConditionCreate">
+    <partial name="ConditionCreate"
+             model="new StoreFront.DATA.EF.Models.Condition()" />
+</div>
+
+<div class="row">
+    <div class="offset-3 col-md-6">
+        <div id="MessageContent" class="text-center"></div>
+    </div>
+</div>
+
+<table class="table" id="ConditionsTable">
     <thead>
         <tr>
             <th>
@@ -23,7 +41,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr id="Condition-@item.ConditionId">
             <td>
                 @Html.DisplayFor(modelItem => item.ConditionName)
             </td>
@@ -32,7 +50,16 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ConditionId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ConditionId">Details</a> |
+                @* <a asp-action="Details" asp-route-id="@item.ConditionId">Details</a>  *@
+                <button type="button"
+                    class="DetailsLink btn btn-link"
+                id="@item.ConditionId"
+                data-toggle="modal"
+                formtarget="#ConditionDetails">
+                Details
+                </button> |
+
+                <!--TO DO : UPDATE DELETE BUTTON-->
                 <a asp-action="Delete" asp-route-id="@item.ConditionId">Delete</a>
             </td>
         </tr>
